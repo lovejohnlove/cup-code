@@ -13,7 +13,9 @@
       "md5": "97cbe8931039fff865a1778ecf403947",
       "sha256": null,
       "sha256_status": "PENDING - bind retroactively against frozen Drive bytes (id 1pbyVlx65syPIry7qSyy-67SMCM4kEUE6)",
-      "status": "IN DRIVE, round-trip md5 verified (downloaded bytes match 97cbe893 exactly), BENCH-PENDING"
+      "status": "IN DRIVE, round-trip md5 verified (downloaded bytes match 97cbe893 exactly), BENCH-PENDING",
+      "provenance_chain": "v1_3.0 FINAL HONEST db0d2404 -> v1_3.1 canonical BYTES FINAL +F 19442B md5 02979fb8 -> v1_3.2 post-G8 27218B md5 dd964d95 (G1-G8, is_integer fix) -> v1_3.3 FLAT-FILL 27731B md5 97cbe893 (evaluate_single_event filled: return 1.0 if event in window else 0.0, per owner flat ruling 2026-11-10 (d), apply-now ruling 2026-11-11; header stub list updated; load_shear_events still stubbed)",
+      "notes": "G8 taxonomy unchanged: 0 PASSED / 1 FAILED-or-ERROR / 3 UNIMPLEMENTED; verify path still exits 3 via load_shear_events stub. v1_3_2 file PRESERVED UNTOUCHED as historical."
     },
     {
       "name": "horizon_nonlinear_v1_3_2.py",
@@ -21,7 +23,10 @@
       "bytes": 27218,
       "md5": "dd964d95c4c73ff16b4a5a612bae01f4",
       "sha256": null,
-      "status": "HISTORICAL (superseded by v1_3_3); preserved untouched"
+      "sha256_status": "PENDING - Drive id 1n7nEnaFszqV3AQWLqCptcEyIexTv_f3I",
+      "status": "HISTORICAL (superseded by v1_3_3); preserved untouched",
+      "provenance_chain": "see v1_3_3 chain",
+      "notes": "Both stubs raw; kept for byte-state history"
     },
     {
       "name": "back_off_wrench.py",
@@ -29,14 +34,23 @@
       "bytes": 11818,
       "md5": "f3e94157ecd69ef3693afc0931525a6c",
       "sha256": null,
-      "status": "PRESERVED - repaired copy + v0.5 deferral notes (docstring-only)"
+      "sha256_status": "PENDING",
+      "status": "PRESERVED - repaired copy + v0.5 deferral notes (docstring-only)",
+      "provenance_chain": "workshop floor v0.4 24aba362 -> v1.2.1 header 7ddacd12 -> v1.2.2 freeze bc2a5baa -> stored 10201B copy (lineage UNRESOLVED) -> repaired 10710B 1f264ba0 -> +deferral notes 11818B f3e94157",
+      "notes": "v0.5 targets: _l2 None-vs-inf reclassification; verify_forward branch disposition keyed to 8201B bench-paired valve (branch LIVE there, keep and test (ok, msg) unpack). F2 (dead-branch deletion) WITHDRAWN."
     },
     {
       "name": "horizon_valve_v4.py (LOCATED, Dropbox)",
       "role": "ledger engine - BENCH-PAIRED",
       "bytes": 8201,
+      "md5": null,
+      "md5_status": "PENDING - from real tool on located bytes",
       "sha256": null,
-      "status": "BENCH-PAIRED per OWNER RULING 2026-11-10 (g)"
+      "sha256_status": "PENDING - required before bench",
+      "status": "BENCH-PAIRED per OWNER RULING 2026-11-10 (g)",
+      "fork_of": "horizon_valve_v4.py PLAIN 3321B md5 7f2ba5ae (Drive id 1Tyz4shNXnrVhLHrlMUEXiccAKI-uuEwl)",
+      "provenance_chain": "workshop floor v4.3 -> v1.2.2 freeze f41c27e1 claimed -> v1.2.1 header ac8b9379 UNPLACED -> PLAIN 3321 (Drive) -> located 8201 (Dropbox, bare verify added)",
+      "notes": "Has bare verify() returning (ok, msg); exercises verify_forward live hasattr path so wrench-valve contract is TESTED, not assumed. Terminology: located vs PLAIN, never full vs PLAIN. No filename renaming for byte-state."
     },
     {
       "name": "horizon_valve_v4.py (PLAIN, Drive)",
@@ -44,13 +58,16 @@
       "bytes": 3321,
       "md5": "7f2ba5ae1a8f50c7fd415f59f7a769b4",
       "sha256": null,
-      "status": "PLAIN REFERENCE"
+      "sha256_status": "PENDING",
+      "status": "PLAIN REFERENCE - id 1Tyz4shNXnrVhLHrlMUEXiccAKI-uuEwl; no bare verify; real pinned byte-state",
+      "notes": "Both valve byte-states stay as files, both pinned, roles distinct."
     }
   ],
-  "runnable": "requires HORIZON_ROOT (non-redacted) + load_shear_events stub + sha256 digests for v1_3_3, wrench, and located 8201 valve.",
+  "runnable": "requires HORIZON_ROOT (non-redacted) + load_shear_events stub (the only remaining stub; evaluate_single_event FILLED flat in v1_3_3) + sha256 digests for v1_3_3, wrench, and located 8201 valve. Byte-stable is not runnable.",
   "open_items": [
-    "load_shear_events / C4: PARKED ON BYTES",
-    "evaluate_single_event: APPLIED 2026-11-11 in v1_3_3 (flat fill)",
-    "close-out sequence: pin sha256s from real tool -> py_compile x3 -> real run"
+    "load_shear_events / C4: RULED (import run_nonlinear_v1_2 and pin it), PARKED ON BYTES, CONFIRMED PARKED 2026-11-11 by direct byte read of v1_3_2/v1_3_3 - body is raise NotImplementedError, nothing to bind to; DEFER, DO NOT RECONSTRUCT (owner (g))",
+    "evaluate_single_event: APPLIED 2026-11-11 in v1_3_3 (flat fill, ratified content). Status: DONE-pending-bench.",
+    "close-out sequence: pin sha256s from real tool (v1_3_3, wrench, located 8201 valve) -> py_compile x3 -> real run (exit 3 on stub path via load_shear_events) -> paste command + output -> re-run --mode predict",
+    "technical repo CUP-Horizon: EXISTS (created by owner 2026-11-10); mirror pushed commit 7068c682; visibility unconfirmed - recommend Private until Gate 4"
   ]
 }
