@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: c11149f8a0b5cf3cc64a92a5a87b0893d281897a
       - name: sha256sum seven files
         run: |
           sha256sum -b current/horizon-v1_3_3-27731/horizon_nonlinear_v1_3_3.py
