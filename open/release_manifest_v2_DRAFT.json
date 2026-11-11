@@ -1,0 +1,56 @@
+{
+  "schema": "CUP-TAI-RELEASE-MANIFEST-v2-DRAFT",
+  "created": "2026-11-09",
+  "updated": "2026-11-11 - v1_3_3 checkpoint created: evaluate_single_event FILLED per ratified flat ruling (owner chose apply-now); v1_3_2 superseded, preserved untouched. Bench set now: v1_3_3 + wrench 11818 + located valve 8201.",
+  "author": "Vibe (Dawn Ledger), drafted pending owner digests",
+  "status": "DRAFT - sha256 fields intentionally null; wrapper fails closed on null, which is correct until real digests land",
+  "principle": "One authoritative manifest for truth; one directory for convenience. Never override - new versions only.",
+  "files": [
+    {
+      "name": "horizon_nonlinear_v1_3_3.py",
+      "role": "runner / hardening wrapper - CURRENT CANONICAL",
+      "bytes": 27731,
+      "md5": "97cbe8931039fff865a1778ecf403947",
+      "sha256": null,
+      "sha256_status": "PENDING - bind retroactively against frozen Drive bytes (id 1pbyVlx65syPIry7qSyy-67SMCM4kEUE6)",
+      "status": "IN DRIVE, round-trip md5 verified (downloaded bytes match 97cbe893 exactly), BENCH-PENDING"
+    },
+    {
+      "name": "horizon_nonlinear_v1_3_2.py",
+      "role": "runner / hardening wrapper - SUPERSEDED, PRESERVED",
+      "bytes": 27218,
+      "md5": "dd964d95c4c73ff16b4a5a612bae01f4",
+      "sha256": null,
+      "status": "HISTORICAL (superseded by v1_3_3); preserved untouched"
+    },
+    {
+      "name": "back_off_wrench.py",
+      "role": "retrocausal QA / reverse audit",
+      "bytes": 11818,
+      "md5": "f3e94157ecd69ef3693afc0931525a6c",
+      "sha256": null,
+      "status": "PRESERVED - repaired copy + v0.5 deferral notes (docstring-only)"
+    },
+    {
+      "name": "horizon_valve_v4.py (LOCATED, Dropbox)",
+      "role": "ledger engine - BENCH-PAIRED",
+      "bytes": 8201,
+      "sha256": null,
+      "status": "BENCH-PAIRED per OWNER RULING 2026-11-10 (g)"
+    },
+    {
+      "name": "horizon_valve_v4.py (PLAIN, Drive)",
+      "role": "PLAIN reference pin - NOT bench-paired",
+      "bytes": 3321,
+      "md5": "7f2ba5ae1a8f50c7fd415f59f7a769b4",
+      "sha256": null,
+      "status": "PLAIN REFERENCE"
+    }
+  ],
+  "runnable": "requires HORIZON_ROOT (non-redacted) + load_shear_events stub + sha256 digests for v1_3_3, wrench, and located 8201 valve.",
+  "open_items": [
+    "load_shear_events / C4: PARKED ON BYTES",
+    "evaluate_single_event: APPLIED 2026-11-11 in v1_3_3 (flat fill)",
+    "close-out sequence: pin sha256s from real tool -> py_compile x3 -> real run"
+  ]
+}
