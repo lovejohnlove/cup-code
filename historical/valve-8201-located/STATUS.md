@@ -1,9 +1,9 @@
-# horizon_valve_v4.py — located
+# STATUS — historical/valve-8201-located
 
-**Status:** CURRENT for bench cut, bytes PENDING  
-**Cut name:** bench-release-2026-11-10  
-**Bytes (reported):** 8201  
-**Source:** Dropbox (not available this session)  
-**SHA-256:** PENDING  
-**Behavior:** bare verify returns ok, msg  
-**Note:** Native 8201 bytes not present on Drive in searchable form this turn. Left as STATUS only. Do not invent or reconstruct.
+STATUS.md only. No .py body yet.
+
+- Located valve is 8201 bytes, bare verify() returns (ok, msg), Dropbox only.
+- Native bytes not yet in GitHub. bench-release-2026-11-10, CURRENT for bench cut, PENDING for bytes.
+- Do NOT fill with PLAIN 3321 (that byte-state lives at historical/valve-3321-PLAIN/).
+- md5 PENDING, sha256 PENDING — required from real tool before bench (owner ruling 2026-11-10 (g)).
+- Not sealed.

@@ -1,7 +1,7 @@
-# Dropbox Horizon-Consolidated-Review 6-file set
+# STATUS — historical/dropbox-6file-MISSING-receipt
 
-**Status:** HISTORICAL only, PRESERVED_REPORTED, transfer receipt MISSING  
-**Reported bytes:** 6576, 17666, 10201, 6953, 8201, 1474  
-**Rule:** Do not promote any of these to current.  
-**Receipt:** MISSING.  
-**Action:** Untouched historical placement only.
+STATUS.md only.
+
+- Dropbox Horizon-Consolidated-Review, 6 files: 6576, 17666, 10201, 6953, 8201, 1474 bytes.
+- Transfer receipt MISSING. PRESERVED_REPORTED, not VERIFIED. Historical only.
+- Not sealed.
