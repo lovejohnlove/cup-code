@@ -11,7 +11,7 @@ jobs:
       - name: sha256sum seven files
         run: |
           sha256sum -b current/horizon-v1_3_3-27731/horizon_nonlinear_v1_3_3.py
-          sha256sum -b current/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py
+          sha256sum -b historical/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py
           sha256sum -b historical/valve-3321-PLAIN/horizon_valve_v4_PLAIN.py
           sha256sum -b historical/contract-9203/CUP_HARNESS_CONTRACT
           sha256sum -b open/release_manifest_v2_DRAFT.json
@@ -32,7 +32,7 @@ jobs:
             echo "OK: $file $actual"
           }
           check current/horizon-v1_3_3-27731/horizon_nonlinear_v1_3_3.py 082024963e4029a191d6c6a68896024f35d09b5a57df7d8af5918fbc1eb1d2d5
-          check current/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py 6975280a50f25524e2957f1089fac63cf65448c2476a419e56750bcf25611bc0
+          check historical/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py 6975280a50f25524e2957f1089fac63cf65448c2476a419e56750bcf25611bc0
           check historical/valve-3321-PLAIN/horizon_valve_v4_PLAIN.py ed1e81bd70201a8795579725c0bb0b968eb98c30458202f83d5e667200a68a91
           check historical/contract-9203/CUP_HARNESS_CONTRACT 0bd6b3d4cc862d6a13f70fce36ad0df583403a2bd027449b837224ad53b95ef2
           check open/release_manifest_v2_DRAFT.json 391f540f742698dbe065528841af945daa3070a9a36b01a51d05ab08ad5e03fc
@@ -41,5 +41,5 @@ jobs:
           echo "all seven hashes match"
       - name: py_compile three files
         run: |
-          python3 -m py_compile current/horizon-v1_3_3-27731/horizon_nonlinear_v1_3_3.py current/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py historical/valve-3321-PLAIN/horizon_valve_v4_PLAIN.py
+          python3 -m py_compile current/horizon-v1_3_3-27731/horizon_nonlinear_v1_3_3.py historical/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py historical/valve-3321-PLAIN/horizon_valve_v4_PLAIN.py
           echo "py_compile exit: $?"
