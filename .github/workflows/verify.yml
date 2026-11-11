@@ -1,0 +1,25 @@
+name: verify-cup-code
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c11149f8a0b5cf3cc64a92a5a87b0893d281897a
+      - name: sha256sum seven files
+        run: |
+          sha256sum -b current/horizon-v1_3_3-27731/horizon_nonlinear_v1_3_3.py
+          sha256sum -b current/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py
+          sha256sum -b historical/valve-3321-PLAIN/horizon_valve_v4_PLAIN.py
+          sha256sum -b historical/contract-9203/CUP_HARNESS_CONTRACT
+          sha256sum -b open/release_manifest_v2_DRAFT.json
+          sha256sum -b historical/scratch-2026-11-11/SCRATCH_github_v133_readback.py
+          sha256sum -b historical/scratch-2026-11-11/SCRATCH_github_v133_readback3.py
+      - name: py_compile three files
+        run: |
+          python3 -m py_compile current/horizon-v1_3_3-27731/horizon_nonlinear_v1_3_3.py current/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py historical/valve-3321-PLAIN/horizon_valve_v4_PLAIN.py
+          echo "py_compile exit: $?"
